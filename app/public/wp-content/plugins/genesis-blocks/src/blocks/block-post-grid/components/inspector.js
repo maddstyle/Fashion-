@@ -54,6 +54,13 @@ export default class Inspector extends Component {
 					this.setState( { categoriesList: [] } );
 				}
 			} );
+		
+		// If we are showing pages, and the posts_per_page value is different than the number of pages chosen, set it to match. 
+		if ( this.props.attributes.postType === 'page' && this.props.attributes.selectedPages.length !==  this.props.attributes.selectedPages.postsToShow ) {
+			this.props.setAttributes( {
+				postsToShow: this.props.attributes.selectedPages.length
+			} );	
+		}
 	}
 
 	componentWillUnmount() {
@@ -190,11 +197,12 @@ export default class Inspector extends Component {
 								<Select
 									options={ pageOptions }
 									value={ attributes.selectedPages }
-									onChange={ ( value ) =>
+									onChange={ ( value ) => {
 										this.props.setAttributes( {
 											selectedPages: value,
-										} )
-									}
+											postsToShow: value.length 
+										} );
+									}}
 									isMulti={ true }
 									closeMenuOnSelect={ false }
 								/>

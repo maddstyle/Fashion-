@@ -64,6 +64,10 @@
 	margin-right: 15px;
 }
 
+.grow {
+	flex-grow: 1;
+}
+
 /* Buttons & Links
 ---------------------------------------------------------------------------- */
 
@@ -144,6 +148,20 @@
 .genesis-blocks-settings-page.wrap .components-button.is-primary:hover:not(:disabled):not([aria-disabled="true"]) {
 	background-color: #23282d;
 	box-shadow: 0 1px 15px 0 rgba(0, 0, 0, 0.12);
+}
+
+.components-button.review-button {
+	background: #fff;
+	color: #000;
+}
+
+.components-button.review-button:hover {
+	background: #fff;
+	color: #06c;
+}
+
+.review-button span {
+	margin-right: 5px;
 }
 
 /* Secondary Buttons
@@ -483,6 +501,10 @@
 		margin-bottom: 30px;
 	}
 
+	.hide-mobile {
+		display: none;
+	}
+
 }
 
 @media only screen and (max-width: 782px) {
@@ -508,6 +530,14 @@
 	.genesis-blocks-settings-page .genesis-blocks-settings-sections .components-tab-panel__tabs .components-button:focus:not(:disabled) {
 		background-color: #fff;
 		color: #23282d;
+	}
+
+	.grow {
+		flex-grow: 0;
+	}
+
+	.hide-mobile {
+		display: none;
 	}
 
 }

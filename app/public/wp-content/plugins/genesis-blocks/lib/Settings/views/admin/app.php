@@ -17,7 +17,11 @@
 	<div class="intro-wrap">
 		<div class="intro">
 			<img src="<?php echo esc_url( $this->context['url'] . 'lib/Settings/assets/images/genesis-planet-icon.svg' ); ?>" alt="<?php esc_html_e( 'Genesis Blocks', 'genesis-blocks' ); ?>" />
-			<h1><?php echo esc_html( $this->page_title ); ?></h1>
+			<h1 class="grow"><?php echo esc_html( $this->page_title ); ?></h1>
+			<a class="components-button review-button hide-mobile" href="//wordpress.org/support/plugin/genesis-blocks/reviews/" target="_blank" rel="noopener noreferrer">
+				<span>&#9733;</span>
+				<?php esc_html_e( 'Leave a review!', 'genesis-blocks' ); ?>
+			</a>
 		</div>
 	</div>
 	<div id="root"></div>

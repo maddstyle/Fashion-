@@ -178,7 +178,7 @@ final class Component_Registry {
 					/* translators: The requested components unique key. */
 					throw new Exception( sprintf( esc_html__( 'The %s layout is not registered.', 'genesis-blocks' ), $key ) );
 				}
-				return self::$layouts[ $key ];
+				return self::render_sections_in_layout( self::$layouts[ $key ] );
 
 			case 'section':
 				if ( empty( self::$sections[ $key ] ) ) {
@@ -199,7 +199,11 @@ final class Component_Registry {
 	 * @return array
 	 */
 	public static function layouts() {
-		return self::$layouts;
+		$layouts = [];
+		foreach ( self::$layouts as $layout ) {
+			$layouts[] = self::render_sections_in_layout( $layout );
+		}
+		return $layouts;
 	}
 
 	/**
@@ -209,5 +213,31 @@ final class Component_Registry {
 	 */
 	public static function sections() {
 		return self::$sections;
+	}
+
+	/**
+	 * Render sections inside of layouts when requested
+	 *
+	 * @param array $layout A single layout structure.
+	 *
+	 * @return array
+	 */
+	private static function render_sections_in_layout( $layout ) {
+		if ( ! is_array( $layout['content'] ) ) {
+			return $layout;
+		}
+
+		$sections = '';
+		foreach ( $layout['content'] as $key ) {
+			if ( gettype( $key ) !== 'string' ) {
+				return;
+			}
+
+			$section   = self::get( 'section', $key );
+			$sections .= $section['content'];
+		}
+
+		$layout['content'] = $sections;
+		return $layout;
 	}
 }

@@ -51,13 +51,19 @@ registerBlockType( 'genesis-blocks/gb-layouts', {
 /**
  * Add a Layout button to the toolbar.
  */
-document.addEventListener( 'DOMContentLoaded', appendImportButton );
+let genesisBlocksLayoutButtonAdded = false;
+wp.data.subscribe( () => {
+	appendImportButton();
+});
 
 /**
  * Build the layout inserter button.
  */
 function appendImportButton() {
-	const toolbar = document.querySelector( '.edit-post-header-toolbar' );
+	if ( genesisBlocksLayoutButtonAdded ) {
+		return;
+	}
+	const toolbar = document.querySelector( '.edit-post-header__toolbar' );
 	if ( ! toolbar ) {
 		return;
 	}
@@ -76,6 +82,8 @@ function appendImportButton() {
 	document
 		.getElementById( 'gbLayoutInsertButton' )
 		.addEventListener( 'click', gbInsertLayout );
+		
+	genesisBlocksLayoutButtonAdded = true;
 }
 
 /**

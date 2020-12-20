@@ -15,7 +15,11 @@
 	<div class="intro-wrap">
 		<div class="intro">
 			<img src="<?php echo esc_url( $this->context['url'] . 'lib/Settings/assets/images/genesis-planet-icon.svg' ); ?>" alt="<?php esc_html_e( 'Genesis Blocks', 'genesis-blocks' ); ?>" />
-			<h1><?php echo esc_html_e( 'Getting Started with Genesis Blocks', 'genesis-blocks' ); ?></h1>
+			<h1 class="grow"><?php echo esc_html_e( 'Getting Started with Genesis Blocks', 'genesis-blocks' ); ?></h1>
+			<a class="components-button review-button hide-mobile" href="//wordpress.org/support/plugin/genesis-blocks/reviews/" target="_blank" rel="noopener noreferrer">
+				<span>&#9733;</span>
+				<?php esc_html_e( 'Leave a review!', 'genesis-blocks' ); ?>
+			</a>
 		</div>
 	</div>
 
@@ -46,10 +50,10 @@
 					<a href="https://studiopress.com/themes" class="components-button is-primary"><?php echo esc_html_e( 'Browse Themes', 'genesis-blocks' ); ?></a>
 				</div>
 				<div class="genesis-gs-resource">
-					<img src="<?php echo esc_url( $this->context['url'] . 'lib/Settings/assets/images/feedback.svg' ); ?>" alt="<?php esc_html_e( 'Provide Feedback', 'genesis-blocks' ); ?>" />
-					<h3><?php echo esc_html_e( 'Provide Feedback', 'genesis-blocks' ); ?></h3>
-					<p><?php echo esc_html_e( 'We are always looking for quality feedback to continue improving Genesis Blocks and making it better with every release.', 'genesis-blocks' ); ?></p>
-					<a href="https://www.surveymonkey.com/r/CXHFZFG" class="components-button is-primary"><?php echo esc_html_e( 'Provide Feedback', 'genesis-blocks' ); ?></a>
+					<img src="<?php echo esc_url( $this->context['url'] . 'lib/Settings/assets/images/review.svg' ); ?>" alt="<?php esc_html_e( 'Leave a review', 'genesis-blocks' ); ?>" />
+					<h3><?php echo esc_html_e( 'Enjoying Genesis Blocks?', 'genesis-blocks' ); ?></h3>
+					<p><?php echo esc_html_e( 'Leave a review on WordPress.org and help the rest of the community discover the potential of the block editor.', 'genesis-blocks' ); ?></p>
+					<a href="http://wordpress.org/support/plugin/genesis-blocks/reviews/" class="components-button is-primary"><?php echo esc_html_e( 'Leave a Review', 'genesis-blocks' ); ?></a>
 				</div>
 			</div>
 		</div>

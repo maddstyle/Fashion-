@@ -36,6 +36,10 @@ function genesis_blocks_render_block_core_latest_posts( $attributes ) {
 			'post__in'    => $page_selection,
 			'post_type'   => 'page',
 		);
+
+		if ( ! empty( $page_selection ) ) {
+			$args['posts_per_page'] = count( $page_selection );
+		}
 	} else {
 		/* Post query args */
 		$args = array(

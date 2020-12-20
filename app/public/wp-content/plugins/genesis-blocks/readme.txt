@@ -3,8 +3,8 @@ Contributors: atomicblocks, arrayhq, johnstonphilip, marksabbath, mindctrl, drea
 Donate link: https://studiopress.com
 Tags: Blocks, editor, gutenberg, gutenberg blocks, page builder, block enabled, page building, block, WP Engine
 Requires at least: 5.3
-Tested up to: 5.5
-Stable tag: 1.2.0
+Tested up to: 5.6
+Stable tag: 1.2.1
 Requires PHP: 7.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -96,6 +96,12 @@ Yes, you will need to have WordPress 5.3 or later installed to take advantage of
 3. Some of the many blocks included in Genesis Blocks
 
 == Changelog ==
+
+= 1.2.1 =
+* Fixed: The layouts block is no longer left over in the editor if the modal is closed by the user.
+* Fixed: The layouts button in the Block Editor header toolbar uses a more reliable javascript event to ensure it is always visible.
+* Fixed: The Post and Page Grid block now shows all pages selected, instead of cutting it off at the number of posts set to show.
+* New: Added a "Leave a review" button to the settings page.
 
 = 1.2.0 =
 * New: Introducing Collections, a curated suite of pattern designs to quickly build out beautiful pages and full websites.
